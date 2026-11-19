@@ -1,0 +1,15 @@
+# Install once per clone:  pre-commit install
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-json
+      - id: detect-private-key
+      - id: no-commit-to-branch   # blocks commits on main; use a feature branch
+        args: ["--branch", "main"]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
