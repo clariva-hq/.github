@@ -41,6 +41,8 @@ repo is the fallback for repos that don't have their own.
   - again when the `claude-review` label is added;
   - never on draft or bot PRs.
 - **Setup:** the Claude GitHub App is installed on the repo, and the `CLAUDE_CODE_OAUTH_TOKEN` org secret is available to it.
+  The repo also needs the `claude-review` label, which GitHub doesn't create on its own:
+  `gh label create claude-review -R clariva-hq/<repo> --color 25076d --description "Re-run the Claude review"`.
 - A human still reviews and merges. Claude's review is advice, not an approval.
 
 ### 5. CI/CD
