@@ -77,6 +77,10 @@ Use the current release, pinned in pre-commit and CI, and kept current by Depend
 | Swift | Xcode coverage (`xccov`) with a gate script |
 | TypeScript / React Native | Jest or Vitest coverage thresholds |
 
+### 8. Mobile app rules
+Repos with a mobile app also follow [MOBILE.md](MOBILE.md): no magic numbers in UI code, Dynamic Type, every
+screen size on iOS and Android, accessibility basics. Each app repo links MOBILE.md from its `AGENTS.md`.
+
 ## Who changes what
 - **Files in a repo** (workflows, configs, templates, docs) change through a PR, like any code.
 - **GitHub settings** are changed by an org owner: rulesets, default branch, app installs, secrets and repo visibility.
@@ -89,6 +93,7 @@ Use the current release, pinned in pre-commit and CI, and kept current by Depend
 - [ ] `.pre-commit-config.yaml` (no commits on `main`, gitleaks, the stack's linter)
 - [ ] A README with setup, test and lint commands
 - [ ] The ruleset's required checks match the CI job names
+- [ ] Mobile apps: `AGENTS.md` links [MOBILE.md](MOBILE.md)
 
 Repos with no code (like this one) need rules 1–5, with gitleaks as the only CI check.
 
