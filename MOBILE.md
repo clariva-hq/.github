@@ -34,7 +34,14 @@ Agents: read this file before writing UI code in any app repo. Each app repo lin
 - Every button and tappable item has an accessible label and role; alerts and errors are announced.
 - Colours come from the theme, with light and dark variants and readable contrast.
 
-## 5. Platform rules from earlier decisions
+## 5. No endless spinners
+- Every network request has a timeout: when nothing arrives for a while, stop and show a clear message with a way
+  to retry. A blocked request on Android once spun forever with no error.
+- Every error the user can hit has a plain-language message (no connection, too slow, limit reached).
+- Local development on Android 17+: apps can't reach private addresses (`10.0.2.2`, `192.168.x`) without the
+  local-network permission; use `adb reverse` so the device reaches the Mac at `localhost`.
+
+## 6. Platform rules from earlier decisions
 - **White-label:** no brand-specific text, colours or ids in code; they come from the brand config.
 - **Nothing secret in an app:** anything in the binary is public. Apps use limited publishable keys or short-lived
   tokens, never a secret (`sk_`) key.
