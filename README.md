@@ -5,6 +5,7 @@ Organisation-wide files for clariva-hq.
 | File | What |
 |---|---|
 | [STANDARDS.md](STANDARDS.md) | Engineering standards every repo follows (PR template, branch rules, Claude review, CI/CD, linters, 90% coverage) |
+| [MOBILE.md](MOBILE.md) | Rules for mobile app code (no magic numbers, Dynamic Type, all screen sizes, accessibility) |
 | [SECURITY.md](SECURITY.md) | How to report a vulnerability. GitHub shows it in every repo that has none of its own |
 | [pull_request_template.md](pull_request_template.md) | Default PR template for repos that have none of their own |
 
